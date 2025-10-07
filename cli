@@ -1,0 +1,44 @@
+GLOBAL OPTIONS:
+    -h, --help              show help message
+    -v, --version           show version information
+    -c, --calendar <id>     calendar ID to operate on (default: primary)
+    --verbose               enable verbose output
+    --config <path>         path to config file
+
+COMMANDS:
+
+calendars
+    List all calendar IDs linked to this user
+    
+events [options]
+    List events from the calendar
+    Options:
+        -n, --number <n>        number of events to fetch (default: 10)
+        -t, --timeout <days>    number of days to fetch (default: 7)
+        -d, --date <date>       date to start fetching from (default: today)
+
+new [options]
+    Create a new event in the calendar
+    Options:
+        -S, --summary <text>      event summary/title (required)
+        -s, --start <time>        start time (required)
+        -e, --end <time>          end time (required)
+        -l, --location <text>     location for the event
+        -d, --description <text>  description for the event
+
+modify <event-id> [options]
+    Modify an existing event in the calendar
+    Arguments:
+        <event-id>              ID of the event to modify (required)
+    Options:
+        -S, --summary <text>      new summary/title
+        -s, --start <time>        new start time
+        -e, --end <time>          new end time
+        -l, --location <text>     new location
+        -d, --description <text>  new description
+
+remove <event-id>
+    Remove an event from the calendar
+    Arguments:
+        <event-id>              ID of the event to remove (required)
+
